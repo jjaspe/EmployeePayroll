@@ -19,7 +19,8 @@ DeductionDetailComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'deduction-detail',
-        templateUrl: 'deduction_detail.component.html'
+        templateUrl: 'deduction_detail.component.html',
+        styles: ['../deduction_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], DeductionDetailComponent);

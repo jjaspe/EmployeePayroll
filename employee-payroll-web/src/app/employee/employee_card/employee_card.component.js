@@ -32,7 +32,8 @@ EmployeeCardComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'employee-card',
-        templateUrl: 'employee_card.component.html'
+        templateUrl: 'employee_card.component.html',
+        styleUrls: ['../employee_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], EmployeeCardComponent);

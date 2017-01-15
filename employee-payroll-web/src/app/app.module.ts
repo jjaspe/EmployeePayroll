@@ -13,6 +13,6 @@ import { DeductionService } from './deduction/index';
     imports: [BrowserModule, HttpModule, EmployeeModule, CommonModule],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
-    providers: [HttpService, EmployeeService]
+    providers: [HttpService, EmployeeService, DeductionService]
 })
 export class AppModule { }

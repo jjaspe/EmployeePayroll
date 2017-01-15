@@ -9,29 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var employee_model_1 = require("../shared/employee.model");
+var index_1 = require("../shared/index");
 var EmployeeDetailsComponent = (function () {
-    function EmployeeDetailsComponent() {
-        this.selected = new core_1.EventEmitter();
+    function EmployeeDetailsComponent(employeeService) {
+        this.employeeService = employeeService;
+        this.onDeductionSelected = new core_1.EventEmitter();
     }
-    EmployeeDetailsComponent.prototype.ngOnInit = function () { };
+    EmployeeDetailsComponent.prototype.ngOnInit = function () {
+    };
+    EmployeeDetailsComponent.prototype.netPay = function () {
+        return this.employee ? this.employeeService.calculateNetPay(this.employee) : 0;
+    };
+    EmployeeDetailsComponent.prototype.deductionSelected = function (deduction) {
+        this.onDeductionSelected.emit(deduction);
+    };
     return EmployeeDetailsComponent;
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", employee_model_1.Employee)
+    __metadata("design:type", index_1.Employee)
 ], EmployeeDetailsComponent.prototype, "employee", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
-], EmployeeDetailsComponent.prototype, "selected", void 0);
+], EmployeeDetailsComponent.prototype, "onDeductionSelected", void 0);
 EmployeeDetailsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'employee-details',
-        templateUrl: 'employee_details.component.html'
+        templateUrl: 'employee_details.component.html',
+        styleUrls: ['../employee_styles.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [index_1.EmployeeService])
 ], EmployeeDetailsComponent);
 exports.EmployeeDetailsComponent = EmployeeDetailsComponent;
 //# sourceMappingURL=employee_details.component.js.map

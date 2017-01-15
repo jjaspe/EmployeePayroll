@@ -20,15 +20,24 @@ var HttpService = (function () {
         return this.http.get(url).map(this.extractData).catch(function (e) { return _this.handleError(e, url); });
     };
     HttpService.prototype.post = function (url, object) {
+        var _this = this;
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         var json = JSON.stringify(object);
-        return this.http.post(url, json, options);
+        return this.http.post(url, json, options).catch(function (e) { return _this.handleError(e, url); });
     };
-    HttpService.prototype.delete = function (url) {
+    HttpService.prototype.put = function (url, object) {
+        var _this = this;
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.delete(url, options);
+        var json = JSON.stringify(object);
+        return this.http.put(url, json, options).catch(function (e) { return _this.handleError(e, url); });
+    };
+    HttpService.prototype.delete = function (url) {
+        var _this = this;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.delete(url, options).catch(function (e) { return _this.handleError(e, url); });
     };
     HttpService.prototype.extractData = function (res) {
         res = JSON.parse(res._body);

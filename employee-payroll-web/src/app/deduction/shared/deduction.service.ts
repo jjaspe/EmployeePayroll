@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs/Rx';
+import { Observable, Subject, ReplaySubject } from 'rxjs/Rx';
 import { Constants, HttpService } from '../../utilities/index';
 import { Deduction } from './deduction.model';
 
@@ -7,7 +7,7 @@ import { Deduction } from './deduction.model';
 export class DeductionService {
     url: string;
     deductionsCache: Deduction[];
-    deductions: Subject<Deduction[]>;
+    deductions: ReplaySubject<Deduction[]> = new ReplaySubject<Deduction[]>(1);
     constructor(private httpService: HttpService) { }
 
     initUrls(baseUrl: string) {
@@ -16,12 +16,11 @@ export class DeductionService {
 
     getDeductions(): Observable<Deduction[]> {
         if (this.url) {
-            if (!this.deductions) {
+            if (!this.deductions.observers.length) {
                 this.getDeductionsFromApi().subscribe(n => {
                     this.deductionsCache = n;           
                     this.deductions.next(n);
                 });
-                this.deductions = new Subject<Deduction[]>();
             }
         }
         return this.deductions;

@@ -1,0 +1,28 @@
+.deduction-details input{
+  width: 4em;
+}
+
+.deduction-details,.deduction-card {
+  margin: 0 .5rem 1rem 0em;
+  list-style-type: none;
+  padding: 0;
+}
+
+.deduction-details label{
+  position: relative;
+}
+
+.deduction-card div{
+  display: inline-block;
+}
+
+.deduction-card {  
+    cursor: pointer;
+    position: relative;
+    left: 0;    
+    padding: .3em .3em;
+    height: 1.6 em;
+    border-radius: 4px;  
+    background-color: cyan;
+    width:20em;
+}

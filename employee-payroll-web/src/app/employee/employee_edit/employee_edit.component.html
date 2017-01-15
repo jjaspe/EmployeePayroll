@@ -1,0 +1,8 @@
+<div class='employee-edit'>
+    <employee-details [employee]='employee' (onDeductionSelected)='removeDeduction($event)'></employee-details>   
+    <deduction-list [deductions]='allDeductions' (onSelected)='addDeduction($event)'></deduction-list>    
+</div>
+<div class='form-buttons'>
+    <input type="button" value='Cancel' (click)='onBack()'/>
+    <input type="button" value='Submit' (click)='onSubmit()'/>
+</div>

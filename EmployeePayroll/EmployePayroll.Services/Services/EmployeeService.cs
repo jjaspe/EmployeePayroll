@@ -29,20 +29,33 @@ namespace EmployePayroll.Services.Services
 
         public List<Employee> GetAll()
         {
-            return this.employeeRepository.getAll();
+            var employees =  this.employeeRepository.getAll().
+                Select(n=>addDeductionsToEmployee(n)).ToList();
+            return employees;
         }
 
         public Employee Get(string id)
         {
-            return this.employeeRepository.get(id);
+            return addDeductionsToEmployee(this.employeeRepository.get(id));
+        }
+        
+        //Returns Employee so it can be used in fluid statements
+        Employee addDeductionsToEmployee(Employee employee)
+        {
+            if (employee != null)
+            {
+                var employeeDeductions = this.employeeDeductionRepository.getAll().
+                    Where(n => n.employeeId.Equals(employee.id)).ToList();
+                employee.deductions = new List<Deduction>();
+                employeeDeductions.ForEach(n => employee.deductions.Add(this.deductionRepository.get(n.deductionId)));
+            }
+            return employee;
         }
 
         public void Update(Employee employee)
         {
             var employeeDeductions = this.employeeDeductionRepository.getAll().
-                Where(n => n.employeeId.Equals(employee.id)).ToList();
-            var dbDeductions = new List<Deduction>();
-            employeeDeductions.ForEach(n => dbDeductions.Add(this.deductionRepository.get(n.deductionId)));
+                Where(n => n.employeeId.Equals(employee.id)).ToList();            
             
             var removeFromDb = employeeDeductions.Where(n=>!employee.deductions.Select(m=>m.id).Contains(n.deductionId)).ToList();
             var addToDb = employee.deductions.Where(n => !employeeDeductions.Select(m => m.deductionId).Contains(n.id)).ToList();

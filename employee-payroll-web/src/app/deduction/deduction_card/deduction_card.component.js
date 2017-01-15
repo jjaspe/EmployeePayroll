@@ -9,17 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var index_1 = require("../shared/index");
 var DeductionCardComponent = (function () {
     function DeductionCardComponent() {
     }
     DeductionCardComponent.prototype.ngOnInit = function () { };
     return DeductionCardComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", index_1.Deduction)
+], DeductionCardComponent.prototype, "deduction", void 0);
 DeductionCardComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'deduction-card',
-        templateUrl: 'deduction_card.component.html'
+        templateUrl: 'deduction_card.component.html',
+        styleUrls: ['../deduction_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], DeductionCardComponent);

@@ -24,7 +24,8 @@ DeductionMainComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'deduction_main',
-        templateUrl: 'deduction_main.component.html'
+        templateUrl: 'deduction_main.component.html',
+        styles: ['app/deduction/deduction_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], DeductionMainComponent);

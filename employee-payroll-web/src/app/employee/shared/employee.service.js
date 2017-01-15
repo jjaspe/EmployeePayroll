@@ -34,6 +34,23 @@ var EmployeeService = (function () {
     EmployeeService.prototype.getEmployeesFromApi = function () {
         return this.httpService.get(this.url);
     };
+    EmployeeService.prototype.saveEmployee = function (employee) {
+        this.httpService.put(this.url, employee).subscribe(function (n) { return console.log('back'); });
+    };
+    EmployeeService.prototype.calculateNetPay = function (employee) {
+        var net = employee.grossPay;
+        employee.deductions.sort(function (a, b) { return a.type - b.type; }).forEach(function (n) {
+            if (n.type == 1) {
+                net = net * (1 - n.amount / 100);
+            }
+            else
+                net -= n.amount;
+        });
+        return net > 0 ? net : 0;
+    };
+    EmployeeService.prototype.removeDeduction = function (employee, deduction) {
+        employee.deductions = employee.deductions.filter(function (n) { return n.id !== deduction.id; });
+    };
     return EmployeeService;
 }());
 EmployeeService = __decorate([

@@ -4,7 +4,8 @@ import { Employee } from '../shared/employee.model';
 @Component({
     moduleId: module.id,
     selector: 'employee-list',
-    templateUrl: 'employee_list.component.html'
+    templateUrl: 'employee_list.component.html',
+    styleUrls:['../employee_styles.css']
 })
 export class EmployeeListComponent implements OnInit {
     @Input() employees: Employee[] = new Array<Employee>();

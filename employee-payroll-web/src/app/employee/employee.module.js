@@ -14,6 +14,7 @@ var employee_details_component_1 = require("./employee_details/employee_details.
 var employee_list_component_1 = require("./employee_list/employee_list.component");
 var employee_card_component_1 = require("./employee_card/employee_card.component");
 var employee_main_component_1 = require("./employee_main.component");
+var employee_edit_component_1 = require("./employee_edit/employee_edit.component");
 var deduction_module_1 = require("../deduction/deduction.module");
 var EmployeeModule = (function () {
     function EmployeeModule() {
@@ -24,9 +25,9 @@ EmployeeModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, common_1.CommonModule, deduction_module_1.DeductionModule],
         declarations: [employee_details_component_1.EmployeeDetailsComponent, employee_list_component_1.EmployeeListComponent,
-            employee_card_component_1.EmployeeCardComponent, employee_main_component_1.EmployeeMainComponent],
+            employee_card_component_1.EmployeeCardComponent, employee_main_component_1.EmployeeMainComponent, employee_edit_component_1.EmployeeEditComponent],
         exports: [employee_list_component_1.EmployeeListComponent, employee_details_component_1.EmployeeDetailsComponent,
-            employee_card_component_1.EmployeeCardComponent, employee_main_component_1.EmployeeMainComponent]
+            employee_card_component_1.EmployeeCardComponent, employee_main_component_1.EmployeeMainComponent, employee_edit_component_1.EmployeeEditComponent]
     })
 ], EmployeeModule);
 exports.EmployeeModule = EmployeeModule;

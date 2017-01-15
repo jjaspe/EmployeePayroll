@@ -24,6 +24,8 @@ namespace EmployeePayroll.WebAPI
             container.RegisterType<IEntityRepository<Employee>, MongoEmployeeRepository>();
             container.RegisterType<IDeductionService, DeductionService>();
             container.RegisterType<IEntityRepository<Deduction>, MongoDeductionRepository>();
+            container.RegisterType<IEntityRepository<EmployeeDeduction>, 
+                MongoEmployeeDeductionRepository>();
         }
     }
 }

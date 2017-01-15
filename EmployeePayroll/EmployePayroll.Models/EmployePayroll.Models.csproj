@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Deduction.cs" />
+    <Compile Include="EmployeeDeduction.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="IEntityRepository.cs" />
     <Compile Include="Enums.cs" />

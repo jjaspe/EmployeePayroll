@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var index_1 = require("../utilities/index");
 var index_2 = require("./shared/index");
+var index_3 = require("../deduction/index");
 var EmployeeMainComponent = (function () {
-    function EmployeeMainComponent(employeeService) {
+    function EmployeeMainComponent(employeeService, deductionService) {
         this.employeeService = employeeService;
+        this.deductionService = deductionService;
         this.view = index_1.Constants.EmployeeViews.list;
         this.views = index_1.Constants.EmployeeViews;
     }
@@ -37,9 +39,10 @@ EmployeeMainComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'employee-main',
-        templateUrl: 'employee_main.component.html'
+        templateUrl: 'employee_main.component.html',
+        styleUrls: ['./employee_styles.css']
     }),
-    __metadata("design:paramtypes", [index_2.EmployeeService])
+    __metadata("design:paramtypes", [index_2.EmployeeService, index_3.DeductionService])
 ], EmployeeMainComponent);
 exports.EmployeeMainComponent = EmployeeMainComponent;
 //# sourceMappingURL=employee_main.component.js.map

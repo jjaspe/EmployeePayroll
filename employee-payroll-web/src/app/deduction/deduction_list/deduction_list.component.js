@@ -32,7 +32,8 @@ DeductionListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'deduction-list',
-        templateUrl: 'deduction_list.component.html'
+        templateUrl: 'deduction_list.component.html',
+        styles: ['../deduction_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], DeductionListComponent);

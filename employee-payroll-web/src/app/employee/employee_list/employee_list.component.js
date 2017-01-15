@@ -32,7 +32,8 @@ EmployeeListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'employee-list',
-        templateUrl: 'employee_list.component.html'
+        templateUrl: 'employee_list.component.html',
+        styleUrls: ['../employee_styles.css']
     }),
     __metadata("design:paramtypes", [])
 ], EmployeeListComponent);

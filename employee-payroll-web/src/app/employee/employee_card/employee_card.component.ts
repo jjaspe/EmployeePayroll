@@ -4,7 +4,8 @@ import { Employee } from '../shared/employee.model';
 @Component({
     moduleId: module.id,
     selector: 'employee-card',
-    templateUrl: 'employee_card.component.html'
+    templateUrl: 'employee_card.component.html',
+    styleUrls:['../employee_styles.css']
 })
 export class EmployeeCardComponent implements OnInit {
     @Input() employee:Employee;

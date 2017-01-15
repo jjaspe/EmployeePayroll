@@ -7,13 +7,14 @@ import { EmployeeDetailsComponent } from './employee_details/employee_details.co
 import { EmployeeListComponent } from './employee_list/employee_list.component';
 import { EmployeeCardComponent } from './employee_card/employee_card.component';
 import { EmployeeMainComponent } from './employee_main.component';
+import { EmployeeEditComponent } from './employee_edit/employee_edit.component';
 import { DeductionModule } from '../deduction/deduction.module';
 
 @NgModule({
     imports: [BrowserModule, HttpModule, FormsModule, CommonModule, DeductionModule],
     declarations: [EmployeeDetailsComponent, EmployeeListComponent, 
-        EmployeeCardComponent, EmployeeMainComponent],
+        EmployeeCardComponent, EmployeeMainComponent, EmployeeEditComponent],
     exports: [EmployeeListComponent, EmployeeDetailsComponent, 
-        EmployeeCardComponent, EmployeeMainComponent]
+        EmployeeCardComponent, EmployeeMainComponent, EmployeeEditComponent]
 })
 export class EmployeeModule { }

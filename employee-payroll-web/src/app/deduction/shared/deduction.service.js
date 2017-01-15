@@ -14,6 +14,7 @@ var index_1 = require("../../utilities/index");
 var DeductionService = (function () {
     function DeductionService(httpService) {
         this.httpService = httpService;
+        this.deductions = new Rx_1.ReplaySubject(1);
     }
     DeductionService.prototype.initUrls = function (baseUrl) {
         this.url = baseUrl + index_1.Constants.DEDUCTIONS_PATH;
@@ -21,12 +22,11 @@ var DeductionService = (function () {
     DeductionService.prototype.getDeductions = function () {
         var _this = this;
         if (this.url) {
-            if (!this.deductions) {
+            if (!this.deductions.observers.length) {
                 this.getDeductionsFromApi().subscribe(function (n) {
                     _this.deductionsCache = n;
                     _this.deductions.next(n);
                 });
-                this.deductions = new Rx_1.Subject();
             }
         }
         return this.deductions;

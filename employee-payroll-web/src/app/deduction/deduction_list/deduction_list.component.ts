@@ -4,7 +4,8 @@ import { Deduction } from '../shared/index';
 @Component({
     moduleId: module.id,
     selector: 'deduction-list',
-    templateUrl: 'deduction_list.component.html'
+    templateUrl: 'deduction_list.component.html',
+    styles: ['../deduction_styles.css']
 })
 export class DeductionListComponent implements OnInit {
     @Input() deductions:Deduction[];

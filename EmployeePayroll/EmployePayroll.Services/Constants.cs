@@ -8,8 +8,10 @@ namespace EmployePayroll.Services
 {
     public static class Constants
     {
-        public const string mongoServerKey = "mongoConnection";
+        public const string mongoLocalDbConnectionKey = "localMongoConnection";
+        public const string mongoRemoteDbConnectionKey = "remoteMongoConnection";
         public const string mongoDbNameKey = "mongoDatabase";
+        public const string runLocalKey = "local";
 
         //Tables
         public const string employeeTable = "Employee";

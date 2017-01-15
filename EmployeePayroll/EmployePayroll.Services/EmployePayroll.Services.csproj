@@ -62,9 +62,11 @@
     <Compile Include="DataAccess\MongoDeduction.cs" />
     <Compile Include="DataAccess\MongoDeductionRepository.cs" />
     <Compile Include="DataAccess\MongoEmployee.cs" />
+    <Compile Include="DataAccess\MongoEmployeeDeduction.cs" />
+    <Compile Include="DataAccess\MongoEmployeeDeductionRepository.cs" />
     <Compile Include="DataAccess\MongoEmployeeRepository.cs" />
     <Compile Include="DataAccess\MongoEntity.cs" />
-    <Compile Include="DataAccess\MongoEntityRepository.cs" />
+    <Compile Include="DataAccess\MongoToServiceEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DeductionService.cs" />
     <Compile Include="Services\EmployeeService.cs" />

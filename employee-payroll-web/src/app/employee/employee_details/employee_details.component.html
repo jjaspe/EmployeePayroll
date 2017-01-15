@@ -1,8 +1,9 @@
-<div class='employee-details' *ngIf='employee'>
-    <div class="at_employee_firstName"><label>First Name: </label>{{employee.firstName}}</div>
-    <div class="at_employee_lastName"><label>Last Name: </label>{{employee.lastName}}</div>
-    <div>
-        <label>Gross Pay: $</label>
-        <input [(ngModel)]="employee.grossPay" class="at_employee_grossPay" disabled/>
+<div *ngIf='employee'> 
+    <div class='employee-details'>
+        <div class="at_employee_firstName"><label>First Name: </label>{{employee.firstName}}</div>
+        <div class="at_employee_lastName"><label>Last Name: </label>{{employee.lastName}}</div>
+        <div><label>Gross Pay: </label>${{employee.grossPay}}</div>
+        <div><label>Net Pay: </label>${{netPay()}}</div>    
     </div>
+    <deduction-list [deductions]='employee.deductions' (onSelected)='deductionSelected($event)'></deduction-list>
 </div>

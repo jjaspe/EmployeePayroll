@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var index_1 = require("./employee/index");
+var index_2 = require("./deduction/index");
 var AppComponent = (function () {
-    function AppComponent(employeeService, elementRef) {
+    function AppComponent(employeeService, deductionService, elementRef) {
         this.employeeService = employeeService;
+        this.deductionService = deductionService;
         this.elementRef = elementRef;
         this.title = 'Employee Payroll';
     }
@@ -20,6 +22,7 @@ var AppComponent = (function () {
         var native = this.elementRef.nativeElement;
         this.apiUrl = native.getAttribute('apiUrl');
         this.employeeService.initUrls(this.apiUrl);
+        this.deductionService.initUrls(this.apiUrl);
     };
     return AppComponent;
 }());
@@ -29,7 +32,9 @@ AppComponent = __decorate([
         selector: 'my-app',
         templateUrl: 'app.component.html'
     }),
-    __metadata("design:paramtypes", [index_1.EmployeeService, core_1.ElementRef])
+    __metadata("design:paramtypes", [index_1.EmployeeService,
+        index_2.DeductionService,
+        core_1.ElementRef])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

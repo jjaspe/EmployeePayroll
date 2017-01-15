@@ -5,7 +5,8 @@ import { Employee} from '../employee/index';
 @Component({
     moduleId: module.id,
     selector: 'deduction_main',
-    templateUrl: 'deduction_main.component.html'
+    templateUrl: 'deduction_main.component.html',
+    styles: ['app/deduction/deduction_styles.css']
 })
 export class DeductionMainComponent implements OnInit {
     @Input() employee:Employee;

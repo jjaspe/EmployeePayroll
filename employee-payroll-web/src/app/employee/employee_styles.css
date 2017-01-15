@@ -1,0 +1,47 @@
+.employee-details,.employee-card {
+  list-style-type: none;  
+  width: 20em;
+}
+
+.employee-details{ 
+  padding: 0; 
+  margin: 0 0 1em 0;
+}
+
+.employee-details,.employee-card div{
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  height: 1.6 em;
+  border-radius: 4px;
+  padding: .3em 0 0 .3em;
+}
+
+.employee-card div{  
+  margin: .5em .5em .5em 0;  
+}
+
+.employee-details input{
+  width: 4em;
+  float:right;
+}
+
+.employee-details label{
+  padding:0 .5em 0 .5em
+}
+
+.employee-edit employee-details{
+  float:left;
+}
+
+.form-buttons{
+  position:absolute;
+  bottom:20;
+}
+
+.employee-edit deduction-list{
+  display: inline-block;
+  margin: 0 0 0 4rem;
+  width: 100px;
+}
