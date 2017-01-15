@@ -12,5 +12,7 @@ namespace EmployePayroll.Models
         public string firstName { get; set; }
         public string lastName { get; set; }
         public double grossPay { get; set; }
+
+        public List<Deduction> deductions = new List<Deduction>();
     }
 }

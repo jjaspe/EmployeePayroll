@@ -10,7 +10,7 @@ using EmployePayroll.Models;
 
 namespace EmployePayroll.Services.DataAccess
 {
-    public class MongoEmployeeRepository:MongoEntityRepository<MongoEmployee,Employee>
+    public class MongoEmployeeRepository:MongoToServiceEntityRepository<MongoEmployee,Employee>
     {
         public MongoEmployeeRepository() :
             base(Constants.employeeTable)

@@ -12,8 +12,10 @@ namespace EmployePayroll.Models
 
         Type get(string id);
 
-        void update(Type Deduction);
+        void update(Type entity);
 
-        void add(Type Deduction);
+        void add(Type entity);
+
+        Type remove(Type entity);
     }
 }

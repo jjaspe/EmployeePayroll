@@ -23,7 +23,7 @@ namespace EmployeePayroll.Controllers
         {
             try
             {
-                var employees = this.employeeService.GetAllEmployees();
+                var employees = this.employeeService.GetAll();
                 return Request.CreateResponse(HttpStatusCode.OK, employees);
             }
             catch (Exception e)
@@ -37,7 +37,7 @@ namespace EmployeePayroll.Controllers
         {
             try
             {
-                var employee = this.employeeService.GetEmployee(id);
+                var employee = this.employeeService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, employee);
             }
             catch (Exception e)
@@ -52,6 +52,20 @@ namespace EmployeePayroll.Controllers
             try
             {
                 this.employeeService.Add(employee);
+                return Request.CreateResponse(HttpStatusCode.OK, employee);
+            }
+            catch (Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
+
+        [HttpPut]
+        public HttpResponseMessage Put(Employee employee)
+        {
+            try
+            {
+                this.employeeService.Update(employee);
                 return Request.CreateResponse(HttpStatusCode.OK, employee);
             }
             catch (Exception e)

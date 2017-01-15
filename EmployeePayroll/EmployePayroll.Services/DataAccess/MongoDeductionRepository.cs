@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmployePayroll.Services.DataAccess
 {
-    public class MongoDeductionRepository:MongoEntityRepository<MongoDeduction,Deduction>
+    public class MongoDeductionRepository:MongoToServiceEntityRepository<MongoDeduction,Deduction>
     {
         IMongoDatabase db = MongoConnectUtility.getMongoDB();
         public MongoDeductionRepository():

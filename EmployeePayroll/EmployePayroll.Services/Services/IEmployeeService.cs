@@ -5,8 +5,10 @@ namespace EmployePayroll.Services.Services
 {
     public interface IEmployeeService
     {
-        List<Employee> GetAllEmployees();
+        List<Employee> GetAll();
         void Add(Employee emp);
-        Employee GetEmployee(string id);
+        Employee Get(string id);
+
+        void Update(Employee employee);
     }
 }
