@@ -1,6 +1,7 @@
 "use strict";
 var Employee = (function () {
     function Employee() {
+        this.deductions = [];
     }
     return Employee;
 }());

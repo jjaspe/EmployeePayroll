@@ -5,6 +5,10 @@ h1 {
   font-size: 250%;
 }
 
+.selected {
+  background-color: red;
+}
+
 .employee-details,.employee-card div{
   cursor: pointer;
   position: relative;

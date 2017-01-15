@@ -1,0 +1,6 @@
+<div class='deduction-card' *ngIf='deduction'>
+    <div class="at_deduction_card" (click)='selected'>
+        {{deduction.name}}, {{deduction.amount}} 
+        <p *ngIf='deduction.type==1'>%</p>
+    </div>
+</div>

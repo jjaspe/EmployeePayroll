@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { HttpService } from './utilities/http.service'
 import { EmployeeModule } from './employee/employee.module';
 import { EmployeeService } from './employee/index';
+import { DeductionModule } from './deduction/deduction.module';
+import { DeductionService } from './deduction/index';
 
 @NgModule({
     imports: [BrowserModule, HttpModule, EmployeeModule, CommonModule],
