@@ -10,41 +10,13 @@ using EmployePayroll.Models;
 
 namespace EmployePayroll.Services.DataAccess
 {
-    public class MongoEmployeeRepository:IEmployeeRepository
+    public class MongoEmployeeRepository:MongoEntityRepository<MongoEmployee,Employee>
     {
-        IMongoDatabase db = MongoConnectUtility.getMongoDB();
-        public MongoEmployeeRepository()
-        {
-        }
-        public List<Employee> getAll()
-        {
-            return db.GetCollection<MongoEmployee>(Constants.employeeTable).Find(n=>true).ToList().
-              Select(n=>toEmployee(n)).ToList();
-        }
-
-        public Employee get(ObjectId id)
-        {
-            var mongoEmployee= db.GetCollection<MongoEmployee>(Constants.employeeTable).
-                Find(n =>n._id == id).FirstOrDefault();
-            return mongoEmployee == null ? null : toEmployee(mongoEmployee);
-        }
-
-        public void update(Employee employee)
-        {
-            var mongoEmployee = toMongoEmployee(employee);
-            var filter = Builders<MongoEmployee>.Filter.Eq(r => r._id, mongoEmployee._id);
-            db.GetCollection<MongoEmployee>(Constants.employeeTable).ReplaceOne(filter, mongoEmployee);
-        }
-
-        public void add(Employee employee)
-        {
-            var mongoEmployee = toMongoEmployee(employee);
-            db.GetCollection<MongoEmployee>(Constants.employeeTable).InsertOne(mongoEmployee);
-            employee.id = mongoEmployee._id.ToString();
-        }
-
-
-        MongoEmployee toMongoEmployee(Employee employee)
+        public MongoEmployeeRepository() :
+            base(Constants.employeeTable)
+        { }
+        
+        protected override MongoEmployee toMongoType(Employee employee)
         {
             return new MongoEmployee()
             {
@@ -56,7 +28,7 @@ namespace EmployePayroll.Services.DataAccess
             };
         }
 
-        Employee toEmployee(MongoEmployee mEmployee)
+        protected override Employee toServiceType(MongoEmployee mEmployee)
         {
             return new Employee()
             {

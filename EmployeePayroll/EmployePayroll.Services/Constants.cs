@@ -11,5 +11,7 @@ namespace EmployePayroll.Services
         public const string mongoServerKey = "mongoConnection";
         public const string mongoDbNameKey = "mongoDatabase";
         public const string employeeTable = "Employee";
+
+        public const string deductionTable = "Deduction";
     }
 }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace EmployePayroll.Models
 {
-    public class Employee
+    public class Employee : Entity
     {
-        public string id { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public double grossPay { get; set; }

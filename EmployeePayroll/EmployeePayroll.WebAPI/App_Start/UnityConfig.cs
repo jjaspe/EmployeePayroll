@@ -21,7 +21,9 @@ namespace EmployeePayroll.WebAPI
         public static void RegisterTypes(UnityContainer container)
         {
             container.RegisterType<IEmployeeService, EmployeeService>();
-            container.RegisterType<IEmployeeRepository, MongoEmployeeRepository>();
+            container.RegisterType<IEntityRepository<Employee>, MongoEmployeeRepository>();
+            container.RegisterType<IDeductionService, DeductionService>();
+            container.RegisterType<IEntityRepository<Deduction>, MongoDeductionRepository>();
         }
     }
 }

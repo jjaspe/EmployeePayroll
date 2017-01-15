@@ -59,11 +59,16 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="DataAccess\MongoConnectUtility.cs" />
+    <Compile Include="DataAccess\MongoDeduction.cs" />
+    <Compile Include="DataAccess\MongoDeductionRepository.cs" />
     <Compile Include="DataAccess\MongoEmployee.cs" />
     <Compile Include="DataAccess\MongoEmployeeRepository.cs" />
     <Compile Include="DataAccess\MongoEntity.cs" />
+    <Compile Include="DataAccess\MongoEntityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DeductionService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\IDeductionService.cs" />
     <Compile Include="Services\IEmployeeService.cs" />
   </ItemGroup>
   <ItemGroup>

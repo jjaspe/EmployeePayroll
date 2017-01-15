@@ -56,8 +56,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deduction.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IEntityRepository.cs" />
+    <Compile Include="Enums.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="IEmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,4 @@
 ﻿using EmployePayroll.Models;
-using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace EmployePayroll.Services.Services
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeeService :  IEmployeeService
     {
-        IEmployeeRepository employeeRepository;
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        IEntityRepository<Employee> employeeRepository;
+        public EmployeeService(IEntityRepository<Employee> employeeRepository)
         {
             this.employeeRepository = employeeRepository;
         }
@@ -28,8 +27,7 @@ namespace EmployePayroll.Services.Services
 
         public Employee GetEmployee(string id)
         {
-            ObjectId _id = new ObjectId(id);
-            return this.employeeRepository.get(_id);
+            return this.employeeRepository.get(id);
         }
     }
 }
